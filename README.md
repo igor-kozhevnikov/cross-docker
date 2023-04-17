@@ -24,7 +24,7 @@ Arguments:
 
 Options:
 
-- `--no-cache` Don't use the cache
+- `--no-cache` Don't use cache
 
 ### Up docker containers
 

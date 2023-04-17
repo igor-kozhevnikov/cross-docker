@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Cross\Docker\Composer;
+namespace Cross\Docker\Plugin;
 
 use Cross\Plugin\BasePlugin;
 
