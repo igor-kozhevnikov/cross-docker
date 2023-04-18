@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Cross\Docker\Commands;
 
-use Cross\Attributes\Attributes;
-use Cross\Attributes\AttributesInterface;
+use Cross\Commands\Attributes\Attributes;
+use Cross\Commands\Attributes\AttributesInterface;
 use Cross\Config\Config;
 
 class Exec extends Command
@@ -19,6 +19,11 @@ class Exec extends Command
      * @inheritDoc
      */
     protected string $description = 'Execute a command in the docker';
+
+    public function __construct()
+    {
+        parent::__construct($this->name);
+    }
 
     /**
      * @inheritDoc

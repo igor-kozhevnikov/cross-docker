@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Cross\Docker\Commands;
 
+use Cross\Commands\Sequence\Sequence;
+use Cross\Commands\Sequence\SequenceInterface;
 use Cross\Commands\SequenceCommand;
-use Cross\Sequence\Sequence;
-use Cross\Sequence\SequenceInterface;
 
 class Restart extends SequenceCommand
 {

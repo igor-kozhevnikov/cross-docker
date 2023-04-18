@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Cross\Docker\Commands;
 
-use Cross\Attributes\Attributes;
-use Cross\Attributes\AttributesInterface;
+use Cross\Commands\Attributes\Attributes;
+use Cross\Commands\Attributes\AttributesInterface;
 
 class Build extends Command
 {

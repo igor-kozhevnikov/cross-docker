@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Cross\Docker\Commands;
 
+use Cross\Commands\Messages\Messages;
+use Cross\Commands\Messages\MessagesInterface;
 use Cross\Commands\ShellCommand;
-use Cross\Messages\Messages;
-use Cross\Messages\MessagesInterface;
 use Cross\Config\Config;
 
 class Settings extends ShellCommand
