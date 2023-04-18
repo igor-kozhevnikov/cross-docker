@@ -6,7 +6,7 @@ namespace Cross\Docker\Commands;
 
 use Cross\Commands\ShellCommand;
 use Cross\Commands\Status\Status;
-use Cross\Config\Config;
+use Cross\Commands\Config\Config;
 
 class BeforeInstall extends ShellCommand
 {

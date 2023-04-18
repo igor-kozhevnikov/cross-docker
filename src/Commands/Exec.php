@@ -6,7 +6,7 @@ namespace Cross\Docker\Commands;
 
 use Cross\Commands\Attributes\Attributes;
 use Cross\Commands\Attributes\AttributesInterface;
-use Cross\Config\Config;
+use Cross\Commands\Config\Config;
 
 class Exec extends Command
 {

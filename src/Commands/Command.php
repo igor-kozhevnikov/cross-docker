@@ -6,7 +6,7 @@ namespace Cross\Docker\Commands;
 
 use Dotenv\Dotenv;
 use Cross\Commands\ShellCommand;
-use Cross\Config\Config;
+use Cross\Commands\Config\Config;
 
 abstract class Command extends ShellCommand
 {

@@ -7,7 +7,7 @@ namespace Cross\Docker\Commands;
 use Cross\Commands\Messages\Messages;
 use Cross\Commands\Messages\MessagesInterface;
 use Cross\Commands\ShellCommand;
-use Cross\Config\Config;
+use Cross\Commands\Config\Config;
 
 class Settings extends ShellCommand
 {
