@@ -19,5 +19,5 @@ class Stop extends Command
     /**
      * @inheritDoc
      */
-    protected string $command = 'docker-compose stop';
+    protected string|array $command = 'docker-compose stop';
 }

@@ -19,5 +19,5 @@ class Start extends Command
     /**
      * @inheritDoc
      */
-    protected string $command = 'docker-compose start';
+    protected string|array $command = 'docker-compose start';
 }

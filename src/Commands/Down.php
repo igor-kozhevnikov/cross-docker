@@ -19,5 +19,5 @@ class Down extends Command
     /**
      * @inheritDoc
      */
-    protected string $command = 'docker-compose down';
+    protected string|array $command = 'docker-compose down';
 }

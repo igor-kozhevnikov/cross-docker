@@ -26,8 +26,7 @@ class Settings extends ShellCommand
      */
     protected function messages(): MessagesInterface
     {
-        return Messages::make()
-            ->success('Docker settings copied');
+        return Messages::make()->success('Docker settings copied');
     }
 
     /**
