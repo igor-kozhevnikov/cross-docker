@@ -28,10 +28,11 @@ class SSH extends Command
      */
     protected function command(): string
     {
-        $container = Config::get("$this->name.container", 'php-fpm');
-        $options = Config::get("$this->name.options", '-it');
-        $shell = Config::get("$this->name.shell", 'bash');
+        $container = Config::get("$this->name.container");
+        $options = Config::get("$this->name.options");
+        $command = Config::get("$this->name.command");
+        $arguments = Config::get("$this->name.arguments");
 
-        return "docker exec $options $container $shell";
+        return "docker exec $options $container $command $arguments";
     }
 }
