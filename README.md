@@ -1,6 +1,6 @@
 # Docker
 
-A set of commands for working with docker containers.
+A set of commands for docker containers.
 
 ## Install
 
