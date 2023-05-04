@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Cross\Docker\Commands;
 
+use Cross\Config\Config;
+
 class Down extends Command
 {
     /**
@@ -19,5 +21,10 @@ class Down extends Command
     /**
      * @inheritDoc
      */
-    protected string|array $command = 'docker-compose down';
+    protected function command(): string
+    {
+        $options = Config::get("$this->name.options");
+
+        return "docker-compose down $options";
+    }
 }

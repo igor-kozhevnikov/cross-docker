@@ -14,7 +14,7 @@ class Start extends Command
     /**
      * @inheritDoc
      */
-    protected string $description = 'Start the docker containers';
+    protected string $description = 'Start containers';
 
     /**
      * @inheritDoc

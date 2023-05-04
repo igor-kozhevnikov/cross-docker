@@ -7,6 +7,7 @@ namespace Cross\Docker\Commands;
 use Cross\Commands\Attributes\Attributes;
 use Cross\Commands\Attributes\AttributesInterface;
 use Cross\Commands\Attributes\AttributesKeeper;
+use Cross\Config\Config;
 
 class Up extends Command
 {
@@ -18,7 +19,7 @@ class Up extends Command
     /**
      * @inheritDoc
      */
-    protected string $description = 'Up the docker containers';
+    protected string $description = 'Up containers';
 
     /**
      * @inheritDoc
@@ -26,10 +27,10 @@ class Up extends Command
     protected function attributes(): AttributesInterface|AttributesKeeper
     {
         return Attributes::make()
-            ->argument('container')->optional()->description('Container name')
-            ->option('--build')->none()->description('Run containers with building')
+            ->argument('container')->optional()->description('Container name for upping')
+            ->option('--build')->none()->description('Build and run containers')
             ->option('--remove-orphans')->none()->description('Run containers with removing orphans')
-            ->option('--no-detach')->none()->description('Run containers in the front');
+            ->option('--no-detach')->none()->description('Run containers in front');
     }
 
     /**
@@ -38,10 +39,13 @@ class Up extends Command
     protected function command(): string
     {
         $container = $this->argument('container');
+
         $build = $this->whenOption('build', '--build');
         $removeOrphans = $this->whenOption('remove-orphans', '--remove-orphans');
         $detach = $this->whenNotOption('no-detach', '--detach');
 
-        return "docker-compose up $container $build $detach $removeOrphans";
+        $options = Config::get("$this->name.options");
+
+        return "docker-compose up $container $build $detach $removeOrphans $options";
     }
 }

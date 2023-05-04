@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Cross\Docker\Commands;
 
+use Cross\Config\Config;
+
 class Stop extends Command
 {
     /**
@@ -19,5 +21,10 @@ class Stop extends Command
     /**
      * @inheritDoc
      */
-    protected string|array $command = 'docker-compose stop';
+    protected function command(): string
+    {
+        $options = Config::get("$this->name.options");
+
+        return "docker-compose stop $options";
+    }
 }
