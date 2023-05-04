@@ -16,6 +16,11 @@ class Stop extends Command
     /**
      * @inheritDoc
      */
+    protected array $aliases = ['stop'];
+
+    /**
+     * @inheritDoc
+     */
     protected string $description = 'Stop containers';
 
     /**

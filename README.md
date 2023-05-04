@@ -40,7 +40,7 @@ Config:
 
 ### Reboot containers
 
-Use the `docker:down` command and then the `docker:up`.
+Run the `docker:down` command and then the `docker:up`.
 
 ```shell
 ./vendor/bin/cross docker:reboot
@@ -48,7 +48,7 @@ Use the `docker:down` command and then the `docker:up`.
 
 ### Restart containers
 
-Use the `docker:stop` command and then the `docker:start`.
+Run the `docker:stop` command and then the `docker:start`.
 
 ```shell
 ./vendor/bin/cross docker:restart
@@ -57,7 +57,10 @@ Use the `docker:stop` command and then the `docker:start`.
 ### Go into a container
 
 ```shell
-./vendor/bin/cross docker:ssh
+./vendor/bin/cross ssh
+```
+
+```shell
 ./vendor/bin/cross ssh
 ```
 
@@ -74,10 +77,18 @@ Config:
 ./vendor/bin/cross docker:start
 ```
 
+```shell
+./vendor/bin/cross start
+```
+
 ### Stop containers
 
 ```shell
 ./vendor/bin/cross docker:stop
+```
+
+```shell
+./vendor/bin/cross stop
 ```
 
 Config:

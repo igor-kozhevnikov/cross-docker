@@ -14,6 +14,11 @@ class Start extends Command
     /**
      * @inheritDoc
      */
+    protected array $aliases = ['start'];
+
+    /**
+     * @inheritDoc
+     */
     protected string $description = 'Start containers';
 
     /**
