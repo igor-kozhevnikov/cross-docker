@@ -41,6 +41,7 @@ class Up extends Command
         $build = $this->whenOption('build', '--build');
         $removeOrphans = $this->whenOption('remove-orphans', '--remove-orphans');
         $detach = $this->whenNotOption('no-detach', '--detach');
+
         return "docker-compose up $container $build $detach $removeOrphans";
     }
 }

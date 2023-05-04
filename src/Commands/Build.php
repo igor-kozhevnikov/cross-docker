@@ -18,7 +18,7 @@ class Build extends Command
     /**
      * @inheritDoc
      */
-    protected string $description = 'Build the docker containers';
+    protected string $description = 'Build containers';
 
     /**
      * @inheritDoc
@@ -37,6 +37,7 @@ class Build extends Command
     {
         $container = $this->argument('container');
         $cache = $this->whenOption('no-cache', '--no-cache');
+
         return "docker-compose build $container $cache";
     }
 }

@@ -21,7 +21,7 @@ class SSH extends Command
     /**
      * @inheritDoc
      */
-    protected string $description = 'Execute a container';
+    protected string $description = 'Go into a container';
 
     /**
      * @inheritDoc

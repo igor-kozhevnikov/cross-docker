@@ -29,15 +29,10 @@
             "Cross\\Docker\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
     "scripts": {
         "phpcs": "vendor/bin/phpcs -p --standard=phpcs.xml",
         "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

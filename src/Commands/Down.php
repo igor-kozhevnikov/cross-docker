@@ -14,7 +14,7 @@ class Down extends Command
     /**
      * @inheritDoc
      */
-    protected string $description = 'Down the docker containers';
+    protected string $description = 'Down containers';
 
     /**
      * @inheritDoc

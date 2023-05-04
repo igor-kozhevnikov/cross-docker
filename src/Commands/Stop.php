@@ -14,7 +14,7 @@ class Stop extends Command
     /**
      * @inheritDoc
      */
-    protected string $description = 'Stop the docker containers';
+    protected string $description = 'Stop containers';
 
     /**
      * @inheritDoc
