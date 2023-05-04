@@ -1,6 +1,6 @@
-# Docker
+# Cross for Docker
 
-A set of commands for docker containers.
+Set of commands for docker.
 
 ## Install
 

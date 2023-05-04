@@ -1,6 +1,6 @@
 {
     "name": "igor-kozhevnikov/cross-docker",
-    "description": "A set of commands for docker containers",
+    "description": "Set of commands for docker",
     "version": "1.0.0",
     "keywords": ["cross", "console", "command", "docker"],
     "homepage": "https://github.com/igor-kozhevnikov/cross-docker",
