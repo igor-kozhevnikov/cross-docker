@@ -26,8 +26,8 @@ class Build extends Command
     protected function attributes(): AttributesInterface|HasAttributes
     {
         return Attributes::make()
-            ->argument('container')->optional()->description('Container name')
-            ->option('--no-cache')->none()->description("Don't use the cache");
+            ->argument('container')->optional()->description('Container for building')
+            ->option('--no-cache')->none()->description("Don't use cache during build");
     }
 
     /**

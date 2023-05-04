@@ -6,7 +6,7 @@ namespace Cross\Docker\Commands;
 
 use Dotenv\Dotenv;
 use Cross\Commands\ShellCommand;
-use Cross\Commands\Config\Config;
+use Cross\Config\Config;
 
 abstract class Command extends ShellCommand
 {
@@ -15,7 +15,7 @@ abstract class Command extends ShellCommand
      */
     protected function env(): array
     {
-        $path = Config::get('docker.env');
+        $path = Config::get('docker.env_path');
         $file = file_get_contents($path);
         return Dotenv::parse($file);
     }

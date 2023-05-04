@@ -8,17 +8,17 @@ use Cross\Commands\Sequence\Sequence;
 use Cross\Commands\Sequence\SequenceInterface;
 use Cross\Commands\SequenceCommand;
 
-class Restart extends SequenceCommand
+class Reboot extends SequenceCommand
 {
     /**
      * @inheritDoc
      */
-    protected string $name = 'docker:restart';
+    protected string $name = 'docker:reboot';
 
     /**
      * @inheritDoc
      */
-    protected string $description = 'Restart containers';
+    protected string $description = 'Reboot containers';
 
     /**
      * @inheritDoc
@@ -26,7 +26,7 @@ class Restart extends SequenceCommand
     protected function sequence(): SequenceInterface
     {
         return Sequence::make()
-            ->command('docker:stop')->end()
-            ->command('docker:start')->end();
+            ->command('docker:down')->end()
+            ->command('docker:up')->end();
     }
 }

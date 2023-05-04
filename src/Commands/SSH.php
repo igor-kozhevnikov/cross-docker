@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Cross\Docker\Commands;
 
-use Cross\Commands\DelegateCommand;
-use Symfony\Component\Console\Command\Command;
+use Cross\Config\Config;
 
-class SSH extends DelegateCommand
+class SSH extends Command
 {
     /**
      * @inheritDoc
@@ -22,17 +21,17 @@ class SSH extends DelegateCommand
     /**
      * @inheritDoc
      */
-    protected string $description = 'Execute the docker container';
+    protected string $description = 'Execute a container';
 
     /**
      * @inheritDoc
      */
-    protected string|Command $delegate = 'docker:exec';
+    protected function command(): string
+    {
+        $container = Config::get("$this->name.container", 'php-fpm');
+        $options = Config::get("$this->name.options", '-it');
+        $shell = Config::get("$this->name.shell", 'bash');
 
-    /**
-     * L
-     *
-     * @var array<string, string>
-     */
-    protected array $parameters = ['shell' => 'bash'];
+        return "docker exec $options $container $shell";
+    }
 }
