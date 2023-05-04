@@ -6,6 +6,7 @@ namespace Cross\Docker\Commands;
 
 use Cross\Commands\Sequence\Sequence;
 use Cross\Commands\Sequence\SequenceInterface;
+use Cross\Commands\Sequence\SequenceKeeper;
 use Cross\Commands\SequenceCommand;
 
 class Restart extends SequenceCommand
@@ -23,10 +24,10 @@ class Restart extends SequenceCommand
     /**
      * @inheritDoc
      */
-    protected function sequence(): SequenceInterface
+    protected function sequence(): SequenceInterface|SequenceKeeper
     {
         return Sequence::make()
-            ->command('docker:stop')->end()
-            ->command('docker:start')->end();
+            ->item('docker:stop')
+            ->item('docker:start');
     }
 }

@@ -6,6 +6,7 @@ namespace Cross\Docker\Commands;
 
 use Cross\Commands\Sequence\Sequence;
 use Cross\Commands\Sequence\SequenceInterface;
+use Cross\Commands\Sequence\SequenceKeeper;
 use Cross\Commands\SequenceCommand;
 
 class Reboot extends SequenceCommand
@@ -23,10 +24,10 @@ class Reboot extends SequenceCommand
     /**
      * @inheritDoc
      */
-    protected function sequence(): SequenceInterface
+    protected function sequence(): SequenceInterface|SequenceKeeper
     {
         return Sequence::make()
-            ->command('docker:down')->end()
-            ->command('docker:up')->end();
+            ->item('docker:down')
+            ->item('docker:up');
     }
 }

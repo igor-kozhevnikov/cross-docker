@@ -6,7 +6,7 @@ namespace Cross\Docker\Commands;
 
 use Cross\Commands\Attributes\Attributes;
 use Cross\Commands\Attributes\AttributesInterface;
-use Cross\Commands\Attributes\HasAttributes;
+use Cross\Commands\Attributes\AttributesKeeper;
 
 class Up extends Command
 {
@@ -23,7 +23,7 @@ class Up extends Command
     /**
      * @inheritDoc
      */
-    protected function attributes(): AttributesInterface|HasAttributes
+    protected function attributes(): AttributesInterface|AttributesKeeper
     {
         return Attributes::make()
             ->argument('container')->optional()->description('Container name')
