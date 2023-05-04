@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Cross\Docker\Commands;
 
-use Cross\Commands\DeputyCommand;
+use Cross\Commands\DelegateCommand;
+use Symfony\Component\Console\Command\Command;
 
-class SSH extends DeputyCommand
+class SSH extends DelegateCommand
 {
     /**
      * @inheritDoc
@@ -21,15 +22,17 @@ class SSH extends DeputyCommand
     /**
      * @inheritDoc
      */
-    protected string $description = 'Execute the bash in the docker';
+    protected string $description = 'Execute the docker container';
 
     /**
      * @inheritDoc
      */
-    protected string $deputy = 'docker:exec';
+    protected string|Command $delegate = 'docker:exec';
 
     /**
-     * @inheritDoc
+     * L
+     *
+     * @var array<string, string>
      */
     protected array $parameters = ['shell' => 'bash'];
 }

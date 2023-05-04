@@ -6,6 +6,7 @@ namespace Cross\Docker\Commands;
 
 use Cross\Commands\Attributes\Attributes;
 use Cross\Commands\Attributes\AttributesInterface;
+use Cross\Commands\Attributes\HasAttributes;
 
 class Build extends Command
 {
@@ -22,11 +23,11 @@ class Build extends Command
     /**
      * @inheritDoc
      */
-    protected function attributes(): AttributesInterface
+    protected function attributes(): AttributesInterface|HasAttributes
     {
         return Attributes::make()
-            ->argument('container')->optional()->description('Container name')->end()
-            ->option('--no-cache')->none()->description("Don't use the cache")->end();
+            ->argument('container')->optional()->description('Container name')
+            ->option('--no-cache')->none()->description("Don't use the cache");
     }
 
     /**

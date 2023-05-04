@@ -6,6 +6,7 @@ namespace Cross\Docker\Commands;
 
 use Cross\Commands\Attributes\Attributes;
 use Cross\Commands\Attributes\AttributesInterface;
+use Cross\Commands\Attributes\HasAttributes;
 use Cross\Commands\Config\Config;
 
 class Exec extends Command
@@ -28,10 +29,10 @@ class Exec extends Command
     /**
      * @inheritDoc
      */
-    protected function attributes(): AttributesInterface
+    protected function attributes(): AttributesInterface|HasAttributes
     {
         return Attributes::make()
-            ->argument('shell')->array()->description('Command for running in the docker')->end();
+            ->argument('shell')->array()->description('Command for running in the docker');
     }
 
     /**
