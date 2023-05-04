@@ -1,7 +1,7 @@
 {
     "name": "igor-kozhevnikov/cross-docker",
     "description": "A set of commands for docker containers",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "keywords": ["cross", "console", "command", "docker"],
     "homepage": "https://github.com/igor-kozhevnikov/cross-docker",
     "license": "MIT",
