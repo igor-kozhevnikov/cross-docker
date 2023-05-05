@@ -1,6 +1,10 @@
 # Cross for Docker
 
-Set of commands for docker.
+[![PHP](https://img.shields.io/badge/php-8.1-green.svg?style=flat-square)](https://github.com/igor-kozhevnikov/cross)
+[![License](https://img.shields.io/github/license/igor-kozhevnikov/cross?style=flat-square)](https://github.com/igor-kozhevnikov/cross)
+[![Release](https://img.shields.io/github/v/release/igor-kozhevnikov/cross?style=flat-square)](https://github.com/igor-kozhevnikov/cross)
+
+Set of console commands for docker.
 
 ## Install
 
@@ -139,3 +143,7 @@ Options:
 Config:
 
 - `options` Applied options
+
+## License
+
+The Cross for Docker is open-sourced software licensed under the [MIT license](https://opensource.org/license/mit/).
