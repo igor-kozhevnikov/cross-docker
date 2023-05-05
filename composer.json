@@ -1,7 +1,7 @@
 {
     "name": "igor-kozhevnikov/cross-docker",
     "description": "Set of console commands for docker",
-    "version": "1.0.0",
+    "version": "1.1.1",
     "keywords": ["cross", "console", "command", "docker"],
     "homepage": "https://github.com/igor-kozhevnikov/cross-docker",
     "license": "MIT",
@@ -14,16 +14,12 @@
     "require": {
         "php": "^8.1",
         "vlucas/phpdotenv": "^5.5",
-        "igor-kozhevnikov/cross": "^0.0.1"
+        "igor-kozhevnikov/cross": "^1.0"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.10",
         "squizlabs/php_codesniffer": "^3.7"
     },
-    "repositories": [
-        { "type": "path", "url": "../cross" },
-        { "type": "path", "url": "../fluent" }
-    ],
     "autoload": {
         "psr-4": {
             "Cross\\Docker\\": "src/"
