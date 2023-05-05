@@ -1,8 +1,8 @@
 # Cross for Docker
 
-[![PHP](https://img.shields.io/badge/php-8.1-green.svg?style=flat-square)](https://github.com/igor-kozhevnikov/cross)
-[![License](https://img.shields.io/github/license/igor-kozhevnikov/cross?style=flat-square)](https://github.com/igor-kozhevnikov/cross)
-[![Release](https://img.shields.io/github/v/release/igor-kozhevnikov/cross?style=flat-square)](https://github.com/igor-kozhevnikov/cross)
+[![PHP](https://img.shields.io/badge/php-8.1-green.svg?style=flat-square)](https://github.com/igor-kozhevnikov/cross-docker)
+[![License](https://img.shields.io/github/license/igor-kozhevnikov/cross-docker?style=flat-square)](https://github.com/igor-kozhevnikov/cross-docker)
+[![Release](https://img.shields.io/github/v/release/igor-kozhevnikov/cross-docker?style=flat-square)](https://github.com/igor-kozhevnikov/cross-docker)
 
 Set of console commands for docker.
 
