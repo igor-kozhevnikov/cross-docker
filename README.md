@@ -10,6 +10,35 @@ This package depends on [Cross](https://github.com/igor-kozhevnikov/cross) packa
 composer require igor-kozhevnikov/cross-docker
 ```
 
+## Configuration
+
+If your project doesn't have a `cross.php` config file in the root directory, just run the follow command.
+
+```shell
+./vendor/bin/cross cross:config
+```
+
+Add data as described below to the `cross.php` file.
+
+```php
+<?php
+
+return [
+    'plugins' => [
+        \Cross\Docker\Plugin\Plugin::class => [
+            'env_path' => 'docker/.env',
+        ],
+    ],
+    'commands' => [
+        \Cross\Docker\Commands\SSH::class => [
+            'container' => 'packager_workspace',
+        ],
+    ],
+];
+```
+
+To learn more about the available configurations, see the [plugin](https://github.com/igor-kozhevnikov/cross-docker/blob/1.x/config/config.php) and [commands](https://github.com/igor-kozhevnikov/cross-docker/blob/1.x/config/config.php) config files.
+
 ## Commands
 
 ### Build containers
