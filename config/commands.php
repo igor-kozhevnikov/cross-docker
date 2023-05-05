@@ -7,7 +7,6 @@ return [
     \Cross\Docker\Commands\Down::class => [
         'options' => null,
     ],
-    \Cross\Docker\Commands\Reboot::class,
     \Cross\Docker\Commands\Restart::class,
     \Cross\Docker\Commands\SSH::class => [
         'container' => 'php-fpm',

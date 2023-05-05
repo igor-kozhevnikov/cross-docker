@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Cross\Docker\Commands;
 
-use Cross\Commands\Sequence\Sequence;
-use Cross\Commands\Sequence\SequenceInterface;
-use Cross\Commands\Sequence\SequenceKeeper;
+use Cross\Attributes\Attributes;
+use Cross\Attributes\AttributesInterface;
+use Cross\Attributes\AttributesKeeper;
+use Cross\Sequence\Sequence;
+use Cross\Sequence\SequenceInterface;
+use Cross\Sequence\SequenceKeeper;
 use Cross\Commands\SequenceCommand;
 
 class Restart extends SequenceCommand
@@ -24,10 +27,23 @@ class Restart extends SequenceCommand
     /**
      * @inheritDoc
      */
+    protected function attributes(): AttributesInterface|AttributesKeeper
+    {
+        return Attributes::make()
+            ->option('--down')->shortcut('-d')->none()->description('Down containers instead of stopping');
+    }
+
+    /**
+     * @inheritDoc
+     */
     protected function sequence(): SequenceInterface|SequenceKeeper
     {
+        $down = $this->option('down');
+
         return Sequence::make()
-            ->item('docker:stop')
-            ->item('docker:start');
+            ->item(Stop::class)->whenNot($down)
+            ->item(Start::class)->whenNot($down)
+            ->item(Down::class)->when($down)
+            ->item(Up::class)->when($down);
     }
 }

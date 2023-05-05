@@ -4,6 +4,8 @@ Set of commands for docker.
 
 ## Install
 
+This package depends on [Cross](https://github.com/igor-kozhevnikov/cross) package.
+
 ```shell
 composer require igor-kozhevnikov/cross-docker
 ```
@@ -38,26 +40,20 @@ Config:
 
 - `options` Applied options
 
-### Reboot containers
-
-Run the `docker:down` command and then the `docker:up`.
-
-```shell
-./vendor/bin/cross docker:reboot
-```
-
 ### Restart containers
 
-Run the `docker:stop` command and then the `docker:start`.
-
 ```shell
-./vendor/bin/cross docker:restart
+./vendor/bin/cross docker:restart [options]
 ```
+
+Options:
+
+- `-d` `--down` Downing containers instead of stopping
 
 ### Go into a container
 
 ```shell
-./vendor/bin/cross ssh
+./vendor/bin/cross docker:ssh
 ```
 
 ```shell

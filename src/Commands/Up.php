@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Cross\Docker\Commands;
 
-use Cross\Commands\Attributes\Attributes;
-use Cross\Commands\Attributes\AttributesInterface;
-use Cross\Commands\Attributes\AttributesKeeper;
+use Cross\Attributes\Attributes;
+use Cross\Attributes\AttributesInterface;
+use Cross\Attributes\AttributesKeeper;
 use Cross\Config\Config;
 
 class Up extends Command
