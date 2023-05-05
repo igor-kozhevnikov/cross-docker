@@ -37,7 +37,7 @@ return [
 ];
 ```
 
-To learn more about the available configurations, see the [plugin](https://github.com/igor-kozhevnikov/cross-docker/blob/1.x/config/config.php) and [commands](https://github.com/igor-kozhevnikov/cross-docker/blob/1.x/config/config.php) config files.
+To learn more about the available configurations, see the [plugin](https://github.com/igor-kozhevnikov/cross-docker/blob/1.x/config/config.php) and [commands](https://github.com/igor-kozhevnikov/cross-docker/blob/1.x/config/commands.php) config files.
 
 ## Commands
 
