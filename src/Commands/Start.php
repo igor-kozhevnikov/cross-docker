@@ -4,23 +4,15 @@ declare(strict_types=1);
 
 namespace Cross\Docker\Commands;
 
+use Cross\Commands\Attributes\Aliases;
+use Cross\Commands\Attributes\Description;
+use Cross\Commands\Attributes\Name;
+
+#[Name('docker:start')]
+#[Description('Start containers')]
+#[Aliases('start')]
 class Start extends Command
 {
-    /**
-     * @inheritDoc
-     */
-    protected string $name = 'docker:start';
-
-    /**
-     * @inheritDoc
-     */
-    protected array $aliases = ['start'];
-
-    /**
-     * @inheritDoc
-     */
-    protected string $description = 'Start containers';
-
     /**
      * @inheritDoc
      */

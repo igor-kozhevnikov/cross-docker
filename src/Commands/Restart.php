@@ -7,23 +7,17 @@ namespace Cross\Docker\Commands;
 use Cross\Attributes\Attributes;
 use Cross\Attributes\AttributesInterface;
 use Cross\Attributes\AttributesKeeper;
+use Cross\Commands\Attributes\Description;
+use Cross\Commands\Attributes\Name;
 use Cross\Sequence\Sequence;
 use Cross\Sequence\SequenceInterface;
 use Cross\Sequence\SequenceKeeper;
 use Cross\Commands\SequenceCommand;
 
+#[Name('docker:restart')]
+#[Description('Restart containers')]
 class Restart extends SequenceCommand
 {
-    /**
-     * @inheritDoc
-     */
-    protected string $name = 'docker:restart';
-
-    /**
-     * @inheritDoc
-     */
-    protected string $description = 'Restart containers';
-
     /**
      * @inheritDoc
      */

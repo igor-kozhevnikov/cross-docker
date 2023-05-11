@@ -4,35 +4,24 @@ declare(strict_types=1);
 
 namespace Cross\Docker\Commands;
 
-use Cross\Config\Config;
+use Cross\Commands\Attributes\Aliases;
+use Cross\Commands\Attributes\Description;
+use Cross\Commands\Attributes\Name;
 
+#[Name('docker:ssh')]
+#[Description('Go into a container')]
+#[Aliases('ssh')]
 class SSH extends Command
 {
     /**
      * @inheritDoc
      */
-    protected string $name = 'docker:ssh';
-
-    /**
-     * @inheritDoc
-     */
-    protected array $aliases = ['ssh'];
-
-    /**
-     * @inheritDoc
-     */
-    protected string $description = 'Go into a container';
-
-    /**
-     * @inheritDoc
-     */
-    protected function command(): string
+    protected function command(): string|array
     {
-        $container = Config::get("$this->name.container");
-        $options = Config::get("$this->name.options");
-        $command = Config::get("$this->name.command");
-        $arguments = Config::get("$this->name.arguments");
-
+        $container = $this->config('container');
+        $options = $this->config('options');
+        $command = $this->config('command');
+        $arguments = $this->config('arguments');
         return "docker exec $options $container $command $arguments";
     }
 }

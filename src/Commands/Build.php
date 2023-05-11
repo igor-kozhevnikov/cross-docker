@@ -7,20 +7,13 @@ namespace Cross\Docker\Commands;
 use Cross\Attributes\Attributes;
 use Cross\Attributes\AttributesInterface;
 use Cross\Attributes\AttributesKeeper;
-use Cross\Config\Config;
+use Cross\Commands\Attributes\Description;
+use Cross\Commands\Attributes\Name;
 
+#[Name('docker:build')]
+#[Description('Build containers')]
 class Build extends Command
 {
-    /**
-     * @inheritDoc
-     */
-    protected string $name = 'docker:build';
-
-    /**
-     * @inheritDoc
-     */
-    protected string $description = 'Build containers';
-
     /**
      * @inheritDoc
      */
@@ -34,14 +27,11 @@ class Build extends Command
     /**
      * @inheritDoc
      */
-    protected function command(): string
+    protected function command(): string|array
     {
         $container = $this->argument('container');
-
         $cache = $this->whenOption('no-cache', '--no-cache');
-
-        $options = Config::get("$this->name.options");
-
+        $options = $this->config('options');
         return "docker-compose build $container $cache $options";
     }
 }

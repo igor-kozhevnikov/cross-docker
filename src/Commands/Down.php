@@ -4,27 +4,19 @@ declare(strict_types=1);
 
 namespace Cross\Docker\Commands;
 
-use Cross\Config\Config;
+use Cross\Commands\Attributes\Description;
+use Cross\Commands\Attributes\Name;
 
+#[Name('docker:down')]
+#[Description('Down containers')]
 class Down extends Command
 {
     /**
      * @inheritDoc
      */
-    protected string $name = 'docker:down';
-
-    /**
-     * @inheritDoc
-     */
-    protected string $description = 'Down containers';
-
-    /**
-     * @inheritDoc
-     */
-    protected function command(): string
+    protected function command(): string|array
     {
-        $options = Config::get("$this->name.options");
-
+        $options = $this->config('options');
         return "docker-compose down $options";
     }
 }

@@ -4,32 +4,21 @@ declare(strict_types=1);
 
 namespace Cross\Docker\Commands;
 
-use Cross\Config\Config;
+use Cross\Commands\Attributes\Aliases;
+use Cross\Commands\Attributes\Description;
+use Cross\Commands\Attributes\Name;
 
+#[Name('docker:stop')]
+#[Description('Stop containers')]
+#[Aliases('stop')]
 class Stop extends Command
 {
     /**
      * @inheritDoc
      */
-    protected string $name = 'docker:stop';
-
-    /**
-     * @inheritDoc
-     */
-    protected array $aliases = ['stop'];
-
-    /**
-     * @inheritDoc
-     */
-    protected string $description = 'Stop containers';
-
-    /**
-     * @inheritDoc
-     */
-    protected function command(): string
+    protected function command(): string|array
     {
-        $options = Config::get("$this->name.options");
-
+        $options = $this->config('options');
         return "docker-compose stop $options";
     }
 }

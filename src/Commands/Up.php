@@ -7,20 +7,13 @@ namespace Cross\Docker\Commands;
 use Cross\Attributes\Attributes;
 use Cross\Attributes\AttributesInterface;
 use Cross\Attributes\AttributesKeeper;
-use Cross\Config\Config;
+use Cross\Commands\Attributes\Description;
+use Cross\Commands\Attributes\Name;
 
+#[Name('docker:up')]
+#[Description('Up containers')]
 class Up extends Command
 {
-    /**
-     * @inheritDoc
-     */
-    protected string $name = 'docker:up';
-
-    /**
-     * @inheritDoc
-     */
-    protected string $description = 'Up containers';
-
     /**
      * @inheritDoc
      */
@@ -36,16 +29,13 @@ class Up extends Command
     /**
      * @inheritDoc
      */
-    protected function command(): string
+    protected function command(): string|array
     {
         $container = $this->argument('container');
-
         $build = $this->whenOption('build', '--build');
-        $removeOrphans = $this->whenOption('remove-orphans', '--remove-orphans');
+        $orphans = $this->whenOption('remove-orphans', '--remove-orphans');
         $detach = $this->whenNotOption('no-detach', '--detach');
-
-        $options = Config::get("$this->name.options");
-
-        return "docker-compose up $container $build $detach $removeOrphans $options";
+        $options = $this->config('options');
+        return "docker-compose up $container $build $detach $orphans $options";
     }
 }
