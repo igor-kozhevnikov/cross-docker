@@ -15,12 +15,15 @@ abstract class Command extends ShellCommand
      */
     protected function env(): array
     {
-        $envPath = Config::get('docker.env_path');
-        $envFile = @file_get_contents($envPath);
-        $env = $envFile ? Dotenv::parse($envFile) : [];
+        $env = [];
 
-        if (Config::has('docker.compose_file_path')) {
-            $env['COMPOSE_FILE'] = Config::get('docker.compose_file_path');
+        if ($path = Config::get('docker.env_path')) {
+            $content = @file_get_contents($path);
+            $env = $content ? Dotenv::parse($content) : $env;
+        }
+
+        if ($overridden = Config::get('docker.env')) {
+            $env = array_merge($env, $overridden);
         }
 
         return $env;
