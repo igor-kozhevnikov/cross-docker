@@ -17,13 +17,22 @@ abstract class Command extends ShellCommand
     {
         $env = [];
 
-        if ($path = Config::get('docker.env_path')) {
-            $content = @file_get_contents($path);
-            $env = $content ? Dotenv::parse($content) : $env;
+        if ($paths = Config::get('docker.env_paths')) {
+            if (is_string($paths)) {
+                $paths = (array) $paths;
+            }
+
+            foreach ($paths as $path) {
+                $content = @file_get_contents($path);
+
+                if ($content) {
+                    $env = array_merge($env, Dotenv::parse($content));
+                }
+            }
         }
 
-        if ($overridden = Config::get('docker.env')) {
-            $env = array_merge($env, $overridden);
+        if ($config = Config::get('docker.env')) {
+            $env = array_merge($env, $config);
         }
 
         return $env;
