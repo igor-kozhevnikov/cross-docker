@@ -10,4 +10,6 @@ return [
 
     'env_paths' => '.env',
 
+    'env' => [],
+
 ];

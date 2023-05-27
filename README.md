@@ -30,7 +30,7 @@ Add data as described below to the `cross.php` file.
 return [
     'plugins' => [
         \Cross\Docker\Plugin\Plugin::class => [
-            'env_path' => 'docker/.env',
+            'env_paths' => 'docker/.env',
         ],
     ],
     'commands' => [
