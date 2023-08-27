@@ -10,7 +10,6 @@ use Cross\Commands\Attributes\Name;
 
 #[Name('docker:ssh')]
 #[Description('Go into a container')]
-#[Aliases('ssh')]
 class SSH extends Command
 {
     /**
