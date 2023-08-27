@@ -10,7 +10,6 @@ use Cross\Commands\Attributes\Name;
 
 #[Name('docker:start')]
 #[Description('Start containers')]
-#[Aliases('start')]
 class Start extends Command
 {
     /**

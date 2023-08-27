@@ -10,7 +10,6 @@ use Cross\Commands\Attributes\Name;
 
 #[Name('docker:stop')]
 #[Description('Stop containers')]
-#[Aliases('stop')]
 class Stop extends Command
 {
     /**
